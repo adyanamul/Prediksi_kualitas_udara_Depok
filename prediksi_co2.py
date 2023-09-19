@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 
 model = pickle.load(open('prediksi_co2.sav','rb'))
 
-df = pd.read_excel("CO2 dataset.xlsx")
+url = 'https://github.com/adyanamul/dataset/raw/main/CO2_dataset.xlsx'
+df = pd.read_excel(url,)
 df['Year'] = pd.to_datetime(df['Year'], format='%Y')
 df.set_index(['Year'], inplace=True)
 
