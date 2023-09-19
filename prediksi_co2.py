@@ -39,6 +39,12 @@ if st.button("Predict"):
         st.write(f"RMSE: {rmse:.2f}")
         st.write(f"MAE: {mae:.2f}")
 
+        # Print additional information for debugging
+        print("Panjang actual_values:", len(actual_values))
+        print("Panjang pred:", len(pred))
+        print("Indeks data aktual:", actual_values.index)
+        print("Indeks data prediksi:", pred.index)
+
     with col2:
         st.subheader("Grafik Prediksi")
         fig, ax = plt.subplots()
@@ -56,10 +62,4 @@ st.markdown("""
 Model ini merupakan model prediksi kualitas udara Depok yang menggunakan data historis CO2. Model ini menggunakan metode time series forecasting.
 
 ### Metrik Evaluasi
-Kami telah menghitung metrik evaluasi prediksi, yaitu Root Mean Squared Error (RMSE) dan Mean Absolute Error (MAE), untuk memberikan gambaran tentang seberapa baik prediksi ini.
-
-### Penanganan Kesalahan
-Aplikasi ini mencoba menangani kesalahan saat membaca model dan data. Pastikan model tersedia dan data dapat diakses dari URL.
-
-Terima kasih telah menggunakan aplikasi ini!
-""")
+Kami telah menghitung metrik evaluasi prediksi, yaitu Root Mean Squared Error (RMSE) dan Mean Absolute Error (MAE), untuk memberikan gambaran tentang seberapa baik predik
